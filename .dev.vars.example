@@ -1,0 +1,8 @@
+# Копія цього файлу як `.dev.vars` потрібна лише для локальної розробки
+# (`npm run dev`, `npm run get-chat-id`). У продакшені секрети задаються через `wrangler secret put`.
+TELEGRAM_BOT_TOKEN=
+TELEGRAM_CHAT_ID=
+GOOGLE_CALENDAR_ID=
+# Весь вміст JSON-ключа сервісного акаунта в один рядок, в одинарних лапках:
+# GOOGLE_SERVICE_ACCOUNT_KEY='{"type":"service_account", ... }'
+GOOGLE_SERVICE_ACCOUNT_KEY=

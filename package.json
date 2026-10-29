@@ -1,0 +1,21 @@
+{
+  "name": "calendar-telegram-bot",
+  "version": "1.0.0",
+  "description": "Cloudflare Worker that reminds in Telegram about Google Calendar events a few minutes before they start",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev --test-scheduled",
+    "deploy": "wrangler deploy",
+    "logs": "wrangler tail",
+    "get-chat-id": "node --env-file=.dev.vars scripts/get-chat-id.mjs",
+    "test": "node --test \"test/*.test.js\""
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^4.155.0"
+  }
+}

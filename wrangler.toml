@@ -1,0 +1,23 @@
+name = "calendar-telegram-bot"
+main = "src/worker.js"
+compatibility_date = "2025-10-01"
+
+# Воркер не має публічної адреси: він лише запускається за розкладом.
+workers_dev = false
+
+[triggers]
+# Щохвилини (UTC). Так нагадування не запізнюється більше ніж на хвилину.
+crons = ["* * * * *"]
+
+# Не секретні налаштування. Секрети (токен бота, chat id, ключ Google, ID календаря)
+# задаються командою `wrangler secret put`, див. README.
+[vars]
+REMINDER_MINUTES = "5"
+TIMEZONE = "Europe/Kyiv"
+
+# Сховище для дедуплікації нагадувань і кешу токена Google.
+# Створіть його: `npx wrangler kv namespace create STATE`
+# і підставте id, який виведе команда.
+[[kv_namespaces]]
+binding = "STATE"
+id = "6adac250000a4ddcbbe9f95fc0149fe2"
